@@ -2,7 +2,7 @@
 
 simple solution for translating python generated wave form to PWM values for Arduino, and converting Arduino analog input values to wave files
 
-![Arduino](/mnt/mmc-SD64G_0xdabeab8b/SCHOOL/PrezentacjaKonferencja/arduino.jpg)
+![Arduino](./arduino.jpg)
 
 ## Table of contents:
 1. In what projects you can use this tool?

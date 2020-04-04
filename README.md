@@ -185,8 +185,48 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 #### trans_ard_wav.py
 
-###### To be continued
+```python
+import numpy as np
 
+
+text = open("./input.txt")
+string = text.read()
+text.close()
+lines = string.splitlines()
+values = []
+result = []
+counter = 0;
+for i in lines:
+	values.append(int(i))	
+for i in values:
+	counter += 1
+	result.append(int(round(np.interp
+	(i,[0,1024],[-32768,32768]),0)))
+for i in result:
+	print(i)
+
+```
+```python
+text = open("./input.txt")
+string = text.read()
+text.close()
+lines = string.splitlines()
+values = []
+result = []
+counter = 0;
+```
+okay so now let's check what this piece of code is doing. First line opens file then as usually we read contents of it and than close the file. Than under variable lines we sign the read text from file but it is split into separate lines. Than I made few variables that will be useful later.
+```python
+for i in lines:
+	values.append(int(i))	
+for i in values:
+	counter += 1
+	result.append(int(round(np.interp
+	(i,[0,1024],[-32768,32768]),0)))
+for i in result:
+	print(i)
+```
+Now the first for loop read every value and converts it from str into int, than next for loop is adding 1 to counter and rounds up with no after decimal point numbers and interpolates value from range of 0,1024 to range of 16 bit audio file. Last for loop is printing out result every value in different line, after that you can redirect this output to another file.
 ### To do list
 
 - [x] translate from python to pwm cycle
